@@ -62,3 +62,17 @@ function enqueue_JS_script()
   wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'), '', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_JS_script');
+
+// Register sidebar
+function my_theme_widgets_init()
+{
+  register_sidebar(array(
+    'name' => 'Sidebar 1',
+    'id' => 'sidebar-1',
+    'before_widget' => '<li id="%1$s" class="widget %2$s">',
+    'after_widget' => '</li>',
+    'before_title' => '<h2 class="widgettitle">',
+    'after_title' => '</h2>',
+  ));
+}
+add_action('widgets_init', 'my_theme_widgets_init');
