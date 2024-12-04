@@ -55,7 +55,7 @@ add_action('wp_enqueue_scripts', 'enqueue_custom_stylesheets');
 // Implement js to the theme
 function enqueue_JS_script()
 {
-  wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.js', array('jquery'), '', true);
+  wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.js', array(), '', true);
   wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'), '', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_JS_script');
