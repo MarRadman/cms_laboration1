@@ -8,15 +8,6 @@ function my_theme_setup()
 }
 add_action('after_setup_theme', 'my_theme_setup');
 
-// Implement css,bootstrap and fonts to the theme
-function enqueue_custom_stylesheets()
-{
-  wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.css');
-  wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
-  wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css');
-}
-add_action('wp_enqueue_scripts', 'enqueue_custom_stylesheets');
-
 // Free clean-up of the head
 function labb1_gratis_cleanup_head()
 {
@@ -51,3 +42,20 @@ function disable_block_widgets()
 {
   remove_theme_support('widgets-block-editor');
 }
+
+// Implement css,bootstrap and fonts to the theme
+function enqueue_custom_stylesheets()
+{
+  wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.css');
+  wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
+  wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css');
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_stylesheets');
+
+// Implement js to the theme
+function enqueue_JS_script()
+{
+  wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.js', array('jquery'), '', true);
+  wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'), '', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_JS_script');
