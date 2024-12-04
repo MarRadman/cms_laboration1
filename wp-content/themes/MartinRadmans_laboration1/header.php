@@ -37,7 +37,13 @@
     </div>
 
     <nav id="nav">
-      <?php wp_nav_menu(); ?>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <?php wp_nav_menu(array('theme_location' => 'navmenu', 'menu_class' => 'menu')); ?>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <main>

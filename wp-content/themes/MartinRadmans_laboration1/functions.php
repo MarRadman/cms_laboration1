@@ -4,7 +4,10 @@ function my_theme_setup()
 {
   add_theme_support('post-thumbnails');
   add_theme_support('menus');
-  register_nav_menu('navmenu', 'Huvudmeny');
+  register_nav_menus(array(
+    'navmenu' => 'Huvudmeny',
+    'pagemenu' => 'Pagemenu'
+  ));
 }
 add_action('after_setup_theme', 'my_theme_setup');
 
