@@ -2,7 +2,6 @@
 <?php
 if (have_posts()) :
   while (have_posts()) : the_post(); ?>
-    <h1>GOT HERE 1</h1>
     <h1 class="mb-4"><?php the_title(); ?></h1>
     <?php if (has_post_thumbnail()) : ?>
       <img src="<?php the_post_thumbnail_url(); ?>" class="img-fluid mb-4" alt="<?php the_title(); ?>">

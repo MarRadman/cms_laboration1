@@ -10,4 +10,11 @@
       ?>
     </ul>
   <?php endif; ?>
+  <div class="sidebar">
+    <?php if (is_home()) : ?>
+      <div class="widget-area">
+        <?php dynamic_sidebar('sidebar-1'); ?>
+      </div>
+    <?php endif; ?>
+  </div>
 </aside>

@@ -2,7 +2,6 @@
 <div class="container mt-5">
   <div class="row">
     <?php if (is_page('undersida-2')) : ?>
-      <h1>GOT HERE 5</h1>
       <div id="primary" class="col-xs-12 col-md-9">
         <?php get_template_part('template-parts/content', 'page'); ?>
       </div>
@@ -18,7 +17,6 @@
         </ul>
       </aside>
     <?php elseif (is_page('undersida')) : ?>
-      <h1>GOT HERE 4</h1>
       <div id="primary" class="col-xs-12 col-md-9">
         <?php get_template_part('template-parts/content', 'page'); ?>
       </div>
@@ -34,7 +32,6 @@
         </ul>
       </aside>
     <?php else : ?>
-      <h1>GOT HERE 3</h1>
       <div id="primary" class="col-xs-12 col-md-9">
         <?php get_template_part('template-parts/content', 'page'); ?>
       </div>

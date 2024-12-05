@@ -8,7 +8,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body>
   <?php wp_body_open(); ?>
 
   <div id="wrap">
@@ -31,10 +31,6 @@
         </div>
       </div>
     </header>
-
-    <div class="mobile-search">
-      <?php get_search_form(); ?>
-    </div>
 
     <nav id="nav">
       <div class="container">
