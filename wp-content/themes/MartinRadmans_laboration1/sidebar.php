@@ -12,9 +12,16 @@
   <?php endif; ?>
   <div class="sidebar">
     <?php if (is_home()) : ?>
-      <div class="widget-area">
-        <?php dynamic_sidebar('sidebar-1'); ?>
+      <div id="secondary" class="col-xs-12 col-md-3">
+        <aside id="secondary" class="col-xs-12 col-md-3">
+          <div class="sidebar">
+            <div class="widget-area">
+              <?php dynamic_sidebar('sidebar-1'); ?>
+            </div>
+          <?php endif; ?>
+          </div>
+        </aside>
       </div>
-    <?php endif; ?>
+  </div>
   </div>
 </aside>

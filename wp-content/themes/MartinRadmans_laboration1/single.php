@@ -8,9 +8,7 @@
         while (have_posts()) : the_post(); ?>
           <article>
             <img src="<?php the_post_thumbnail_url(); ?>" class="img-fluid mb-4" alt="<?php the_title(); ?>">
-            <h1 class="title">
-              <?php the_title(); ?></a>
-            </h1>
+            <h1 class="title"><?php the_title(); ?></h1>
             <ul class="meta">
               <li>
                 <i class="fa fa-calendar"></i> <?php echo get_the_date('j F, Y'); ?>
@@ -21,14 +19,12 @@
               <li>
                 <i class="fa fa-tag"></i> <?php echo get_the_category_list(', '); ?>
               </li>
-              <li>
-                <?php the_content(); ?>
-              </li>
             </ul>
+            <?php the_content(); ?>
           </article>
         <?php endwhile;
       else : ?>
-        <p><?php _e('Inga inlägg hittades.') ?></p>
+        <p><?php _e('Inga inlägg hittades.', 'textdomain'); ?></p>
       <?php endif;
       ?>
     </div>
