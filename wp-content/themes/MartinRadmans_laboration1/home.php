@@ -3,14 +3,15 @@
 <div class="container">
   <div class="row">
     <div id="primary" class="col-xs-12 col-md-9">
+      <h1><?php single_post_title(); ?></h1>
       <?php
       if (have_posts()) :
         while (have_posts()) : the_post(); ?>
           <article>
             <img src="<?php the_post_thumbnail_url(); ?>" class="img-fluid mb-4" alt="<?php the_title(); ?>">
-            <h1 class="title">
-              <?php the_title(); ?></a>
-            </h1>
+            <h2 class="title">
+              <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </h2>
             <ul class="meta">
               <li>
                 <i class="fa fa-calendar"></i> <?php echo get_the_date('j F, Y'); ?>
@@ -21,12 +22,14 @@
               <li>
                 <i class="fa fa-tag"></i> <?php echo get_the_category_list(', '); ?>
               </li>
-              <li>
-                <?php the_content(); ?>
-              </li>
             </ul>
+            <p><?php the_excerpt(); ?></p>
           </article>
         <?php endwhile;
+        echo get_the_posts_pagination(array(
+          'prev_text' => __('Föregående', 'textdomain'),
+          'next_text' => __('Nästa ', 'textdomain'),
+        ));
       else : ?>
         <p><?php _e('Inga inlägg hittades.') ?></p>
       <?php endif;

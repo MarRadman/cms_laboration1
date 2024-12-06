@@ -76,3 +76,23 @@ function my_theme_widgets_init()
   ));
 }
 add_action('widgets_init', 'my_theme_widgets_init');
+
+// Add so you can move between pages and the style for it
+function labb1_nav_pages()
+{
+  return '
+  <nav class="navigation pagination" aria-label="Sidonumrering för inlägg">
+      <h2 class="screen-reader-text">Sidonumrering för inlägg</h2>
+      %3$s
+  </nav>';
+}
+add_filter('navigation_markup_template', 'labb1_nav_pages', 10, 2);
+
+// Filter out img tag from content
+function filter_content_images($content)
+{
+  // Ta bort alla <img>-taggar från innehållet
+  $content = preg_replace('/<img[^>]+\>/i', '', $content);
+  return $content;
+}
+add_filter('the_content', 'filter_content_images');

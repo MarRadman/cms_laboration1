@@ -8,7 +8,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class() ?>>
   <?php wp_body_open(); ?>
 
   <div id="wrap">
