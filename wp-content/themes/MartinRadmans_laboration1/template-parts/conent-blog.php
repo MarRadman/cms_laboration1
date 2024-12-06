@@ -8,7 +8,7 @@
         while (have_posts()) : the_post(); ?>
           <article>
             <?php if (has_post_thumbnail()) : ?>
-              <img src="<?php the_post_thumbnail_url(); ?>" class="img-fluid mb-4" alt="<?php the_title(); ?>">
+              <?php the_post_thumbnail('full', ['class' => 'img-fluid mb-4', 'alt' => get_the_title()]); ?>
             <?php endif; ?>
             <ul class="meta">
               <li>
@@ -17,7 +17,7 @@
               </li>
               <li>
                 <i class="fa fa-user"></i>
-                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" title="Inlägg av <?php the_author(); ?>" rel="author"><?php the_author(); ?></a>
+                <a href=<?php the_author(); ?> rel="author"><?php the_author(); ?></a>
               </li>
               <li>
                 <i class="fa fa-tag"></i>
