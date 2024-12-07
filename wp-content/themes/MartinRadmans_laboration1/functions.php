@@ -96,3 +96,43 @@ function filter_content_images($content)
   return $content;
 }
 add_filter('the_content', 'filter_content_images');
+
+// Register custom sidebar menu
+function labb1_register_menus()
+{
+  register_nav_menu('custom-sidebar-menu', __('Custom Sidebar Menu', 'textdomain'));
+}
+add_action('init', 'labb1_register_menus');
+
+// Register custom widget for footer
+function labb1_widgets_init()
+{
+  register_sidebar(array(
+    'name'          => __('Footer Kort om oss', 'textdomain'),
+    'id'            => 'footer-1',
+    'description'   => __('Add widgets here to appear in the Kort om oss section of the footer.', 'textdomain'),
+    'before_widget' => '<div class="widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+  register_sidebar(array(
+    'name'          => __('Footer Kontaktuppgifter', 'textdomain'),
+    'id'            => 'footer-2',
+    'description'   => __('Add widgets here to appear in the Kontaktuppgifter section of the footer.', 'textdomain'),
+    'before_widget' => '<div class="widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+  register_sidebar(array(
+    'name'          => __('Footer Social media', 'textdomain'),
+    'id'            => 'footer-3',
+    'description'   => __('Add widgets here to appear in the Social media section of the footer.', 'textdomain'),
+    'before_widget' => '<div class="widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+}
+add_action('widgets_init', 'labb1_widgets_init');

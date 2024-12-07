@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div id="primary" class="col-xs-12 col-md-9">
-      <h1><?php single_post_title(); ?></h1>
+      <h1><?php _e('Blogg', 'textdomain'); ?></h1>
       <?php
       if (have_posts()) :
         while (have_posts()) : the_post(); ?>
@@ -31,13 +31,10 @@
           'next_text' => __('Nästa ', 'textdomain'),
         ));
       else : ?>
-        <p><?php _e('Inga inlägg hittades.') ?></p>
-      <?php endif;
-      ?>
+        <p><?php _e('Inga inlägg hittades.', 'textdomain'); ?></p>
+      <?php endif; ?>
     </div>
-    <div id="secondary" class="col-xs-12 col-md-3">
-      <?php get_sidebar(); ?>
-    </div>
+    <?php get_sidebar(); ?>
   </div>
 </div>
 

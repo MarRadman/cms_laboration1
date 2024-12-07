@@ -85,9 +85,7 @@
         endif;
     ?>
   </div>
-  <aside id="secondary" class="col-xs-12 col-md-3">
-    <?php get_sidebar(); ?>
-  </aside>
+  <?php get_sidebar(); ?>
 <?php endif; ?>
 </div>
 </div>
